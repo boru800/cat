@@ -1,0 +1,16 @@
+.nav_active{
+  position: relative;  
+ 
+  :before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: solid 4px #{nth($colors, 7)};
+    z-index: 150;
+    bottom: -2px;
+    left: 0;
+    opacity: 1;
+  }
+}

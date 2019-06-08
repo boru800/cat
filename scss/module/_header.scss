@@ -1,0 +1,197 @@
+
+
+  
+  .header {
+    background-color: #{nth($colors, 1)};
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 0px 3px 6px rgba(0, 0, 0, 0.16);
+    z-index: 100;
+  
+    &-inner {
+      height: 75px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 980px;
+      margin: 0 auto;
+  
+      @include mq("tab") {
+        padding: 0 30px;
+      }
+    }
+  
+    &-logo {
+      width: 3.3vw;
+      min-width: 50px;
+      display: block;
+    }
+  
+    &-nav {
+      display: flex;
+      flex-wrap: wrap;
+      @include mq("sp") {
+        display: none;
+      }
+  
+      &-item {
+        pointer-events: none;
+        position: relative;
+        line-height: 75px;
+  
+        :before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0px;
+          border: solid 4px #{nth($colors, 7)};
+          z-index: 150;
+          bottom: -2px;
+          left: 0;
+          opacity: 0;
+          transition: 1s all;
+          pointer-events: none;
+        }
+  
+        :hover::before {
+          opacity: 1;
+        }
+  
+        a {
+          @include link-cove();
+        }
+      }
+      &-item:not(:last-child) {
+        margin-right: 4.8rem;
+      }
+    }
+  }
+  
+  
+  
+  .header_sp {
+    display: none;
+  
+    @include mq("sp") {
+      display: block;
+    }
+  
+    &-check {
+      display: none;
+    }
+    &-label {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+    &-icon {
+      @include header-icon();
+      position: relative;
+      top: 0;
+      margin-top: 12.5px;
+      transition: all 1s;
+  
+      &:before {
+        @include header-icon();
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -10.5px;
+        transition: all 0.5s;
+      }
+      &:after {
+        @include header-icon();
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 10.5px;
+        transition: all 0.5s;
+      }
+    }
+  
+    &-label-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 150;
+      top: 0;
+      left: 0;
+      background-color: #{nth($colors, 1)};
+      display: none;
+  
+      opacity: 0;
+    }
+  
+    &-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 80%;
+      background-color: #fff;
+      transition: all 1s;
+      text-align: center;
+      transform: translateX(100%);
+      z-index: 200;
+    }
+    &-list {
+    }
+    &-item {
+      padding: 1.5rem 0;
+      position: relative;
+      font-size: 2rem;
+      width: 100%;
+      border-bottom: 1px solid #{nth($colors, 2)};
+      font-weight: bold;
+      transition: all 0.5s;
+      pointer-events: none;
+      
+      :before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0px;
+        border: solid 4px #{nth($colors, 7)};
+        z-index: 150;
+        bottom: -2px;
+        left: 0;
+        opacity: 0;
+        transition: 1s all;
+        pointer-events: none;
+      }
+  
+  
+      a {
+        @include link-cove();
+      }
+  
+      &:active {
+        color: #{nth($colors, 1)};
+        background-color: #{nth($colors, 5)};
+      }
+    }
+  }
+  
+  #header_sp-check:checked ~ .header_sp-nav {
+    transform: translateX(0%);
+  }
+  #header_sp-check:checked ~ .header_sp-label-bg {
+    display: block;
+    opacity: 0.5;
+  }
+  #header_sp-check:checked ~ .header_sp-label .header_sp-icon {
+    height: 0;
+  }
+  #header_sp-check:checked ~ .header_sp-label .header_sp-icon::before {
+    transform: translateY(10.5px) rotate(135deg);
+    -webkit-transform: translateY(10.5px) rotate(135deg);
+  }
+  #header_sp-check:checked ~ .header_sp-label .header_sp-icon::after {
+    transform: translateY(-10.5px) rotate(-135deg);
+    -webkit-transform: translateY(-10.5px) rotate(-135deg);
+  }
+

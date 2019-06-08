@@ -1,0 +1,88 @@
+
+.cat2 {
+    padding-top: 9rem;
+    &-heading {
+      @include heading();
+      margin-bottom: 100px;
+      text-align: center;
+    }
+  
+    &-upper {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-bottom: 8.6rem;
+  
+      @include mq("tab") {
+        max-width: 90%;
+      }
+  
+      &-content {
+        max-width: 450px;
+  
+        @include mq("tab") {
+          max-width: 48%;
+        }
+        @include mq("sp") {
+          margin-bottom: 50px;
+          max-width: 100%;
+        }
+      }
+      &-img {
+        margin-bottom: 50px;
+  
+        @include mq("tab") {
+          max-width: 100%;
+        }
+        @include mq("sp") {
+          margin-bottom: 25px;
+          width: 100%;
+        }
+      }
+      &-txt {
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+    }
+  
+    &-bottom {
+      background-image: url(../img/cat2-bg@2x.png);
+      background-size: cover;
+      padding-top: calc(100% * 0.64);
+      position: relative;
+      min-height: 700px;
+      object-fit: cover;
+      @include mq("tab") {
+        object-fit: cover;
+        background-position: 40% 15%;
+      }
+  
+      &-content {
+        width: 600px;
+        min-height: 600px;
+        font-size: 2rem;
+        line-height: 1.7;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.51);
+        white-space: pre-line;
+        padding: 6.63% 5.07% 8%;
+        display: inline-block;
+        position: absolute;
+        top: 10%;
+        right: 15%;
+  
+        @include mq("tab") {
+          width: 450px;
+          right: 5%;
+          padding: 6% 5.07% 5%;
+          min-height: 0px;
+        }
+        @include mq("sp") {
+          max-width: 90%;
+          padding-bottom: 10%;
+        }
+      }
+    }
+  }

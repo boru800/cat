@@ -1,0 +1,27 @@
+@import "./setting/config";
+@import "./setting/br";
+@import "./setting/scroll";
+
+
+@import "./mixin/heading";
+@import "./mixin/_link-cove.scss";
+@import "./mixin/_header-icon.scss";
+
+@import "./base/reset";
+@import "./base/base";
+
+@import "./module/header";
+@import "./module/footer";
+@import "./module/main";
+@import "./module/backtop";
+
+@import "./page/cat1";
+@import "./page/cat2";
+@import "./page/cat3";
+@import "./page/_nav-active.scss";
+
+
+
+
+
+

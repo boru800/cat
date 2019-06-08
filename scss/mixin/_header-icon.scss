@@ -1,0 +1,7 @@
+@mixin header-icon {
+    width: 100%;
+    background-color: #{nth($colors, 2)};
+    display: block;
+    height: 5px;
+    border-radius: 10px;
+  }

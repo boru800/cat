@@ -1,0 +1,36 @@
+//ブレイクポイント
+$layout-width-inner:980px;
+
+//メディアクエリ
+$mq: (
+  'sp': 'screen and (max-width: 767px)',
+  'tab': 'print,screen and (max-width: #{$layout-width-inner - 1px})',
+  'pc': 'print,screen and (max-width: #{$layout-width-inner})'
+) !default;
+
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($mq, $breakpoint)} {
+    @content;
+  }
+}
+
+//@include mq ('tab'){}
+
+
+@font-face {
+  font-family: 'OhmegaSans-Regular';
+  src: url(../../font/OhmegaSans-Regular.otf) format("otf");
+}
+
+//画像格納ディレクトリ
+$imgDir: '/img/';
+
+//PCレイアウト時の最小横幅
+$minPcContentWidth: 1000px;
+
+//サイトで使用するカラー
+
+//使用方法 n番目を指定
+//#{nth($colors, 1)他
+$colors: #FFFFFF, #333333,#FCF6F2,#6A6A6A,#707070,#777777,#AD2727,#8E8E8E;

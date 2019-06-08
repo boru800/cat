@@ -1,0 +1,36 @@
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  color: #{nth($colors, 2)};
+  font-family: 'OhmegaSans-Regular',YuGothic,'Yu Gothic','Hiragino Sans','ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  background-color: #{nth($colors, 1)};
+  font-size: 1.6rem;
+}
+
+
+li{
+  list-style: none;
+  font-size: 1.8rem;;
+}
+
+//SP
+@media screen and (max-width: 767px){
+  body{
+    min-width: 320px;
+  }
+  html, body{
+    height: 100%;
+    min-height: 100%;
+    font-size: 50%;
+   
+  }
+}
+//PC
+@media print,screen and (min-width: #{$layout-width-inner}){
+  body{
+    width: 100%;
+  }
+}
